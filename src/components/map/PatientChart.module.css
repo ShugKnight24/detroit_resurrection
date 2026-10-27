@@ -1,0 +1,386 @@
+.chart {
+  position: absolute;
+  top: 88px; /* clear the fixed nav */
+  right: 16px;
+  bottom: 16px;
+  width: min(420px, calc(100% - 32px));
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: rgba(13, 17, 23, 0.96);
+  backdrop-filter: blur(8px);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6);
+  z-index: 5;
+  animation: slide 0.35s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+@keyframes slide {
+  from { opacity: 0; transform: translateX(24px); }
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 18px 20px 14px;
+  border-bottom: 1px solid var(--line);
+}
+
+.kicker {
+  margin: 0;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.address {
+  margin: 4px 0 2px;
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: 28px;
+  line-height: 1.1;
+}
+
+.sub {
+  margin: 0;
+  font-size: 13px;
+  color: var(--bone-dim);
+}
+
+.close {
+  flex: none;
+  width: 32px;
+  height: 32px;
+  border: 1px solid var(--line);
+  border-radius: 50%;
+  background: none;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.body {
+  flex: 1;
+  overflow-y: auto;
+  padding: 16px 20px 20px;
+  display: grid;
+  align-content: start;
+  gap: 14px;
+}
+
+.body p {
+  margin: 0;
+}
+
+.vitals {
+  margin: 0;
+  display: grid;
+  gap: 8px;
+}
+
+.vitals div {
+  display: grid;
+  grid-template-columns: 110px 1fr;
+  gap: 8px;
+}
+
+.vitals dt {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--bone-dim);
+}
+
+.vitals dd {
+  margin: 0;
+  font-size: 14px;
+}
+
+.note {
+  padding: 10px 12px;
+  border-left: 2px solid var(--spirit);
+  background: rgba(124, 255, 178, 0.06);
+  font-size: 14px;
+  color: var(--bone);
+}
+
+.intake,
+.result,
+.wizard,
+.step,
+.revived {
+  display: grid;
+  gap: 12px;
+}
+
+.field {
+  display: grid;
+  gap: 6px;
+  font-size: 14px;
+  color: var(--bone);
+}
+
+.field textarea {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--night);
+  color: var(--ink);
+  font: inherit;
+  resize: vertical;
+}
+
+.photo {
+  position: relative;
+  padding: 12px;
+  border: 1px dashed var(--line);
+  border-radius: 8px;
+  font-size: 14px;
+  color: var(--bone-dim);
+  text-align: center;
+  cursor: pointer;
+}
+
+.photo input {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.primary,
+.secondary {
+  display: block;
+  width: 100%;
+  padding: 13px 16px;
+  border-radius: 999px;
+  font-weight: 600;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.primary {
+  border: 0;
+  background: var(--spirit);
+  color: #04130a;
+}
+
+.primary:disabled {
+  opacity: 0.6;
+  cursor: progress;
+}
+
+.secondary {
+  border: 1px solid var(--line);
+  background: none;
+  color: var(--ink);
+}
+
+.link {
+  border: 0;
+  background: none;
+  color: var(--bone-dim);
+  cursor: pointer;
+}
+
+.pulse {
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--spirit), transparent) 0 0 / 40% 100% no-repeat;
+  animation: sweep 1.1s linear infinite;
+}
+
+@keyframes sweep {
+  from { background-position: -40% 0; }
+  to { background-position: 140% 0; }
+}
+
+.error {
+  color: var(--pulse);
+  font-size: 14px;
+}
+
+.verdict {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 22px;
+  line-height: 1.25;
+  color: var(--alive);
+}
+
+.options {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  display: grid;
+  gap: 8px;
+}
+
+.options legend,
+.partners h3 {
+  margin-bottom: 6px;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--bone-dim);
+}
+
+.option {
+  position: relative;
+  display: grid;
+  gap: 4px;
+  padding: 12px 14px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.option input {
+  position: absolute;
+  opacity: 0;
+}
+
+.option[data-chosen="true"] {
+  border-color: var(--alive);
+  background: rgba(255, 209, 102, 0.06);
+}
+
+.optionTitle {
+  font-weight: 600;
+  font-size: 15px;
+}
+
+.meta {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--bone-dim);
+}
+
+.partners ul {
+  margin: 0;
+  padding-left: 18px;
+  font-size: 14px;
+}
+
+.partners span {
+  color: var(--bone-dim);
+}
+
+.source {
+  font-size: 12px;
+  color: var(--bone-dim);
+}
+
+.progress {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 4px;
+  font-size: 11px;
+  font-family: var(--font-mono);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--bone-dim);
+}
+
+.progress li {
+  padding-top: 6px;
+  border-top: 3px solid var(--line);
+}
+
+.progress li[data-done="true"] {
+  border-color: var(--spirit);
+}
+
+.progress li[aria-current="step"] {
+  border-color: var(--alive);
+  color: var(--ink);
+}
+
+.step h3 {
+  margin: 0;
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: 22px;
+}
+
+.choices {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+
+.choices button {
+  padding: 12px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: none;
+  cursor: pointer;
+}
+
+.choices button[aria-pressed="true"] {
+  border-color: var(--alive);
+  background: rgba(255, 209, 102, 0.08);
+}
+
+.checklist {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 8px;
+}
+
+.checklist label {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 10px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.checklist input {
+  margin-top: 4px;
+  accent-color: var(--spirit);
+}
+
+.checklist strong {
+  display: block;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+
+.nav .primary {
+  width: auto;
+  padding-inline: 24px;
+}
+
+.revived {
+  padding: 16px;
+  border: 1px solid rgba(255, 209, 102, 0.4);
+  border-radius: 12px;
+  background: radial-gradient(circle at top, rgba(255, 209, 102, 0.12), transparent 70%);
+}
+
+@media (max-width: 640px) {
+  .chart {
+    top: auto;
+    left: 8px;
+    right: 8px;
+    bottom: 8px;
+    width: auto;
+    max-height: 72%;
+  }
+}
