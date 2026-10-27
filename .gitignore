@@ -39,3 +39,9 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# local vitals event log
+/data/
+
+# copied from node_modules by `npm run copy-worker`
+/public/maplibre-gl-worker.mjs

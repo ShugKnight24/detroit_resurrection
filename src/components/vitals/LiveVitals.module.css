@@ -1,0 +1,160 @@
+.waiting {
+  font-family: var(--font-mono);
+  color: var(--bone-dim);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.tiles {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 12px;
+}
+
+.tile {
+  display: grid;
+  gap: 4px;
+  padding: 20px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: #070b09;
+}
+
+.tileValue {
+  font-family: var(--font-mono);
+  font-size: 40px;
+  line-height: 1;
+  color: var(--spirit);
+  text-shadow: 0 0 16px rgba(124, 255, 178, 0.35);
+}
+
+.tile[data-tone="alive"] .tileValue {
+  color: var(--alive);
+  text-shadow: 0 0 16px rgba(255, 209, 102, 0.4);
+}
+
+.tileLabel {
+  font-size: 14px;
+  color: var(--bone-dim);
+}
+
+.panel {
+  padding: 20px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--night-raised);
+}
+
+.panel:first-of-type {
+  grid-column: 1 / -1;
+}
+
+.panel h2 {
+  margin: 0 0 16px;
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: 24px;
+}
+
+.funnel {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 10px;
+}
+
+.funnel li {
+  display: grid;
+  grid-template-columns: 180px 1fr 48px;
+  align-items: center;
+  gap: 12px;
+  font-size: 14px;
+}
+
+.bar {
+  height: 10px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--spirit) 0 var(--w), var(--line) var(--w));
+  transition: background 0.6s ease;
+}
+
+.value {
+  font-family: var(--font-mono);
+  text-align: right;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+.table th {
+  text-align: left;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--bone-dim);
+}
+
+.table th,
+.table td {
+  padding: 8px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.table td:not(:first-child),
+.table th:not(:first-child) {
+  text-align: right;
+  font-family: var(--font-mono);
+}
+
+.feed {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 8px;
+  font-size: 14px;
+}
+
+.feed li {
+  display: grid;
+  grid-template-columns: 72px 1fr auto;
+  gap: 10px;
+}
+
+.time,
+.where {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--bone-dim);
+}
+
+.empty {
+  margin: 0;
+  color: var(--bone-dim);
+}
+
+@media (max-width: 760px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .funnel li {
+    grid-template-columns: 1fr 48px;
+  }
+
+  .bar {
+    grid-column: 1 / -1;
+    grid-row: 2;
+  }
+}

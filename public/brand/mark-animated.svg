@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
+  <title>Detroit Resurrection</title>
+  <!-- Loops every 4s: paddles hit the walls, shock, the pulse draws, the house lights up. -->
+  <rect width="64" height="64" rx="14" fill="#05070a"/>
+  <path d="M12 31L32 13l20 18v22H12z" stroke="#6d6a64" stroke-width="3" stroke-linejoin="round">
+    <animate attributeName="stroke" values="#6d6a64;#6d6a64;#f1ece2;#f1ece2;#6d6a64" keyTimes="0;0.3;0.42;0.92;1" dur="4s" repeatCount="indefinite"/>
+  </path>
+  <path d="M3 41h14l4-7 4 13 6-24 6 21 3-7 3 4h18" pathLength="1" stroke="#ffd166" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="1" stroke-dashoffset="1">
+    <animate attributeName="stroke-dashoffset" values="1;1;0;0;1" keyTimes="0;0.18;0.4;0.92;1" dur="4s" repeatCount="indefinite"/>
+  </path>
+  <rect x="5" y="33" width="5" height="14" rx="2" fill="#f1ece2" opacity="0">
+    <animate attributeName="opacity" values="0;1;1;0;0" keyTimes="0;0.08;0.16;0.26;1" dur="4s" repeatCount="indefinite"/>
+    <animateTransform attributeName="transform" type="translate" values="-8 0;0 0;2 0;-6 0;-6 0" keyTimes="0;0.08;0.12;0.26;1" dur="4s" repeatCount="indefinite"/>
+  </rect>
+  <rect x="54" y="33" width="5" height="14" rx="2" fill="#f1ece2" opacity="0">
+    <animate attributeName="opacity" values="0;1;1;0;0" keyTimes="0;0.08;0.16;0.26;1" dur="4s" repeatCount="indefinite"/>
+    <animateTransform attributeName="transform" type="translate" values="8 0;0 0;-2 0;6 0;6 0" keyTimes="0;0.08;0.12;0.26;1" dur="4s" repeatCount="indefinite"/>
+  </rect>
+  <circle cx="32" cy="40" r="22" fill="#bfe3ff" opacity="0">
+    <animate attributeName="opacity" values="0;0;0.5;0;0" keyTimes="0;0.12;0.14;0.24;1" dur="4s" repeatCount="indefinite"/>
+  </circle>
+</svg>

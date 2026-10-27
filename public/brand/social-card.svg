@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" fill="none">
+  <title>Detroit Resurrection: bring Detroit's vacant lots back to life</title>
+  <defs>
+    <radialGradient id="glow" cx="78%" cy="62%" r="55%">
+      <stop offset="0" stop-color="#ffd166" stop-opacity="0.22"/>
+      <stop offset="1" stop-color="#ffd166" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="dots" width="22" height="22" patternUnits="userSpaceOnUse">
+      <circle cx="3" cy="3" r="2" fill="#ff8a3d" fill-opacity="0.35"/>
+    </pattern>
+  </defs>
+  <rect width="1200" height="630" fill="#05070a"/>
+  <rect x="640" y="0" width="560" height="630" fill="url(#dots)"/>
+  <rect width="1200" height="630" fill="url(#glow)"/>
+  <!-- The mark at billboard scale: a house with the city's pulse running through it -->
+  <g transform="translate(700 150) scale(6)">
+    <path d="M12 31L32 13l20 18v22H12z" stroke="#f1ece2" stroke-width="2" stroke-linejoin="round" fill="#05070a"/>
+  </g>
+  <path d="M0 396h718l24-42 24 78 36-144 36 126 18-42 18 24h326" stroke="#ffd166" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="72" y="210" fill="#f1ece2" font-family="'Instrument Serif', Georgia, serif" font-size="104">Detroit</text>
+  <text x="72" y="310" fill="#ffd166" font-family="'Instrument Serif', Georgia, serif" font-style="italic" font-size="104">Resurrection</text>
+  <text x="74" y="470" fill="#c9c3b6" font-family="ui-sans-serif, system-ui, sans-serif" font-size="26">55,995 Land Bank lots and houses, waiting on a neighbor.</text>
+  <text x="74" y="566" fill="#8a857b" font-family="ui-monospace, Menlo, monospace" font-size="16" letter-spacing="4">FIND · DIAGNOSE · BRING IT BACK</text>
+</svg>

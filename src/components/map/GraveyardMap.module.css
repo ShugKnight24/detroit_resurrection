@@ -1,0 +1,129 @@
+.section {
+  position: relative;
+  height: 100svh;
+  min-height: 560px;
+  border-top: 1px solid var(--line);
+  overflow: hidden;
+}
+
+.map {
+  position: absolute;
+  inset: 0;
+  background: #0a0d0b;
+}
+
+.toolbar {
+  position: absolute;
+  top: 88px; /* clear the fixed nav */
+  left: 16px;
+  right: 16px;
+  display: grid;
+  gap: 10px;
+  max-width: 560px;
+  pointer-events: none;
+}
+
+.toolbar > * {
+  pointer-events: auto;
+}
+
+.search {
+  position: relative;
+}
+
+.search input {
+  width: 100%;
+  padding: 14px 16px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: rgba(13, 17, 23, 0.92);
+  backdrop-filter: blur(6px);
+  color: var(--ink);
+  font: inherit;
+}
+
+.search input::placeholder {
+  color: var(--bone-dim);
+}
+
+.results {
+  list-style: none;
+  margin: 6px 0 0;
+  padding: 6px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--night-panel);
+}
+
+.results button {
+  width: 100%;
+  display: grid;
+  padding: 8px 10px;
+  border: 0;
+  border-radius: 6px;
+  background: none;
+  text-align: left;
+  cursor: pointer;
+}
+
+.results button:hover,
+.results button:focus-visible {
+  background: var(--night-raised);
+}
+
+.results small {
+  color: var(--bone-dim);
+}
+
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  align-items: center;
+}
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: rgba(13, 17, 23, 0.92);
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.chip::before {
+  content: "";
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--c);
+  box-shadow: 0 0 8px var(--c);
+}
+
+.chip[aria-pressed="false"] {
+  opacity: 0.45;
+}
+
+.chip[aria-pressed="false"]::before {
+  box-shadow: none;
+}
+
+.revivedCount {
+  padding: 6px 12px;
+  border-radius: 999px;
+  background: rgba(255, 209, 102, 0.14);
+  color: var(--alive);
+  font-size: 13px;
+}
+
+.loading {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  font-family: var(--font-mono);
+  color: var(--bone-dim);
+}
